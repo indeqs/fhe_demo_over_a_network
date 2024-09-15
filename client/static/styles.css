@@ -1,0 +1,115 @@
+/* styles.css (place in both server/static/ and client/static/) */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    max-width: 800px;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+h1,
+h2,
+h3 {
+    color: #2c3e50;
+}
+
+h1 {
+    text-align: center;
+}
+
+.fhe-explanation,
+.fhe-demo {
+    margin-bottom: 40px;
+}
+
+.fhe-diagram {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.fhe-diagram img {
+    max-width: 100%;
+    height: auto;
+}
+
+ol,
+ul {
+    padding-left: 20px;
+}
+
+.fun-example {
+    background-color: #e8f6fe;
+    border: 1px solid #b8e6ff;
+    padding: 20px;
+    border-radius: 4px;
+    margin-top: 20px;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+input[type="number"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+input[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+.result {
+    background-color: #e8f6fe;
+    border: 1px solid #b8e6ff;
+    padding: 20px;
+    border-radius: 4px;
+    margin-top: 20px;
+}
+
+.result h2 {
+    color: #2980b9;
+    margin-top: 0;
+}
+
+.flashes {
+    list-style-type: none;
+    padding: 0;
+}
+
+.flashes li {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+}

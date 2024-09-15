@@ -1,0 +1,95 @@
+<!-- client/templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FHE Addition Demo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.png') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>FHE Addition Demo</h1>
+
+        <section class="fhe-explanation">
+            <h2>What is Fully Homomorphic Encryption (FHE)?</h2>
+            <p>Fully Homomorphic Encryption (FHE) is a revolutionary cryptographic technique that allows computations to
+                be performed on encrypted data without decrypting it first. This means you can process sensitive
+                information while keeping it private!</p>
+
+            <div class="fhe-diagram">
+                <img src="{{ url_for('static', filename='fhe_diagram.svg') }}" alt="FHE Diagram">
+            </div>
+
+            <h3>How Does FHE Work?</h3>
+            <ol>
+                <li>You encrypt your data using a special encryption key.</li>
+                <li>The encrypted data is sent to a server or cloud service.</li>
+                <li>The server performs computations on the encrypted data without being able to see the actual values.
+                </li>
+                <li>The result, still encrypted, is sent back to you.</li>
+                <li>You decrypt the result using your decryption key.</li>
+            </ol>
+
+            <h3>Why Does FHE Exist?</h3>
+            <p>FHE solves a fundamental problem in data privacy: how to utilize powerful cloud computing resources
+                without exposing sensitive data. It enables secure outsourcing of computations, even when dealing with
+                highly confidential information.</p>
+
+            <h3>Applications of FHE</h3>
+            <ul>
+                <li><strong>Healthcare:</strong> Analyze patient data without compromising privacy.</li>
+                <li><strong>Finance:</strong> Perform calculations on encrypted financial data.</li>
+                <li><strong>Machine Learning:</strong> Train models on encrypted datasets.</li>
+                <li><strong>Cloud Computing:</strong> Process sensitive data securely in the cloud.</li>
+            </ul>
+
+            <h3>Fun Example: The Secret Recipe</h3>
+            <div class="fun-example">
+                <p>Imagine you have a secret recipe for the world's best cookie, but you need help calculating the right
+                    proportions for a large batch. You don't want to reveal your secret ingredients!</p>
+                <p>With FHE, you could:</p>
+                <ol>
+                    <li>Encrypt your recipe's ingredients and quantities.</li>
+                    <li>Send the encrypted data to a professional chef's super-computer.</li>
+                    <li>The chef's computer calculates the perfect proportions for your large batch, all while working
+                        with encrypted data.</li>
+                    <li>You receive the encrypted results and decrypt them.</li>
+                    <li>Voilà! You have the perfect proportions for your large batch, and your secret recipe remains
+                        safe!</li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="fhe-demo">
+            <h2>Try It Yourself!</h2>
+            <p>Enter a number between 0 and 63. Our server will add 42 to it without knowing the actual value!</p>
+            <form method="post">
+                <input type="number" name="input" min="0" max="100" required>
+                <input type="submit" value="Add 42 (Encrypted)">
+            </form>
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <ul class="flashes">
+                {% for message in messages %}
+                <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            {% endwith %}
+            {% if result is not none %}
+            <div class="result">
+                <h2>Result</h2>
+                <p>The server added 42 to your input: <strong>{{ result }}</strong></p>
+                <p>Amazing! The server performed this calculation without ever seeing your original number or the final
+                    result!</p>
+            </div>
+            {% endif %}
+        </section>
+    </div>
+</body>
+
+</html>

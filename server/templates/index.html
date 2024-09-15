@@ -1,0 +1,21 @@
+<!-- server/templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FHE Server</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.png') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>FHE Server</h1>
+        <p>This server is ready to perform encrypted computations.</p>
+        <p>Check the server console to see that it cannot read the actual values!</p>
+    </div>
+</body>
+
+</html>
